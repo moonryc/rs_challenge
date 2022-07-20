@@ -1,13 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import CssBaseline from '@mui/material/CssBaseline';
+import {render} from "react-dom";
+import "./index.scss";
+import CssBaseline from "@mui/material/CssBaseline";
 import * as serviceWorker from "./serviceWorker";
+import { GlobalStore } from "./store/GlobalStore";
+import HomePage from "./pages/HomePage";
 
-ReactDOM.render(
+render(
   <CssBaseline>
-    <App />
+    <GlobalStore>
+      <HomePage/>
+    </GlobalStore>
   </CssBaseline>,
   document.getElementById("root")
 );
