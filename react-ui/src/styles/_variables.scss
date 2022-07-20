@@ -2,4 +2,13 @@ $background-color: #272326;
 $text-color: #fdf4e5;
 $border-color: $text-color;
 $hyperlink-color: #46cdec;
-$selected-color: #fde389
+$selected-color: #fde389;
+$error-color: #fc696a;
+
+
+//breakpoints from MUI
+$xs:0px;
+$sm:600px;
+$md:900px;
+$lg:1200px;
+$xl:1536px;
