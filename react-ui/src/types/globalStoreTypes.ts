@@ -1,5 +1,5 @@
 import { Team } from "./nbaTypes";
-import { IAction } from "./index";
+import { IAction, Weather } from './index'
 import { Dispatch } from "react";
 
 
@@ -10,10 +10,12 @@ export interface GlobalStoreContextType{
 
 export interface GlobalState {
   teams:Team[]|[]
-  selectedTeam:Team|null
+  weather:Weather|null
+  isMetric:boolean
 }
 
 export enum GlobalActions {
   UPDATE_TEAMS,
-  UPDATE_SELECTED_TEAM
+  UPDATE_WEATHER,
+  TOGGLE_UNIT_TYPE
 }

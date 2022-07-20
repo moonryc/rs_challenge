@@ -6,7 +6,8 @@ import { useGlobalStoreReducer } from "./reducers";
 
 const initialState:GlobalState = {
   teams: [],
-  selectedTeam:null
+  weather:null,
+  isMetric:false
 }
 
 const GlobalStoreContext = createContext<GlobalStoreContextType>({ dispatch: ()=>{}, state: initialState })
