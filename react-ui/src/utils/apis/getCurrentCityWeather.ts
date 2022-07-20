@@ -9,9 +9,6 @@ export const getCurrentCityWeather = async (cityName: string):Promise<Weather|nu
     }
     return (await response.json()) as Weather;
   } catch (e) {
-    //TODO REMOVE
-    alert("ERROR FETCHING WEATHER");
-    console.log(e);
     return null
   }
 };
