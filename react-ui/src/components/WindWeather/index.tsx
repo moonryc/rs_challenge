@@ -1,37 +1,38 @@
 import {
-  FormControlLabel, Paper,
+  FormControlLabel,
   Switch,
   Table,
   TableBody,
   TableCell,
   TableContainer,
   TableHead,
-  TableRow
-} from "@mui/material";
-import React, { useState } from "react";
-import styles from "./windWeather.module.scss";
+  TableRow,
+} from '@mui/material'
+import React from 'react'
+import styles from './windWeather.module.scss'
+import { GlobalActions, WeatherCurrent } from '../../types'
+import { useGlobalStoreContext } from '../../store/GlobalStore'
+import DegreeSymbol from '../DegreeSymbol'
 
 interface WindWeatherProps {
-  gust_kph: number;
-  gust_mph: number;
-  wind_degree: number;
-  wind_dir: string;
-  wind_kph: number;
-  wind_mph: number;
+  currentWeather:WeatherCurrent
+  isMetric:boolean
 }
 
 
-const WindWeather = ({ gust_kph, wind_degree, wind_kph, wind_dir, wind_mph, gust_mph }: WindWeatherProps) => {
+const WindWeather = ({ currentWeather,isMetric }: WindWeatherProps) => {
+  const {gust_kph, wind_degree, wind_kph, wind_dir, wind_mph, gust_mph} = currentWeather
 
-  const [isMetric, setIsMetric] = useState<boolean>(false);
+
 
   const gust = isMetric ? `${gust_kph} kph` : `${gust_mph} mph`;
   const wind = isMetric ? `${wind_kph} kph` : `${wind_mph} mph`;
 
-  const data = [{ name: "gust", value: gust }, { name: "wind", value: wind }, {
-    name: "Wind Degree",
-    value: wind_degree
-  }, { name: "Wind Direction", value: wind_dir }];
+  const data = [
+    { name: "gust", value: gust },
+    { name: "wind", value: wind },
+    { name: "Wind Degree", value: wind_degree },
+    { name: "Wind Direction", value: wind_dir }];
 
 
   return (
@@ -41,18 +42,14 @@ const WindWeather = ({ gust_kph, wind_degree, wind_kph, wind_dir, wind_mph, gust
           <TableHead>
           <TableRow component={"th"}>
             <TableCell className={styles.headerCell}>Wind</TableCell>
-            <TableCell align={'right'}>
-            <FormControlLabel
-              control={<Switch className={styles.unitToggle} value={isMetric} onClick={() => setIsMetric(prevState => !prevState)} />}
-              label="Metric" />
-            </TableCell>
+            <TableCell/>
           </TableRow>
             </TableHead>
           <TableBody>
             {data.map(row => (
               <TableRow key={row.name}>
                 <TableCell component="th" scope="row">{row.name}</TableCell>
-                <TableCell align="right">{row.value}</TableCell>
+                <TableCell align="right">{row.value} {row.name==="Wind Degree" && <DegreeSymbol isTemperature={false}/>}</TableCell>
               </TableRow>
             ))}
           </TableBody>
