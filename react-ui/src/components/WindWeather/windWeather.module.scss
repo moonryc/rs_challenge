@@ -1,0 +1,24 @@
+@use '../../styles/_variables' as *;
+
+.root{
+
+  .headerCell{
+    border-bottom: $border-color solid 1px;
+    font-size:2.5rem;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    font-weight: bold;
+  }
+
+  tr > th{
+    border-left: $border-color solid 1px;
+  }
+
+  tr > td{
+    border-right: $border-color solid 1px;
+  }
+
+  th, td{
+    color: $text-color;
+  }
+}

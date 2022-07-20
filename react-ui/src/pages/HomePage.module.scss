@@ -1,0 +1,29 @@
+@use "../styles/_variables" as *;
+
+.root{
+
+  display: flex;
+  background-color: $background-color;
+  margin:0;
+  height:100vh;
+  max-height:100vh;
+
+  .teams{
+    flex:25%;
+    overflow-y: scroll;
+    border-right: 1px dashed $border-color;
+    //Hide scrollbar for IE, EDGE< and Firefox
+    -ms-overflow-style: none;
+    scrollbar-width:none;
+    //Hide Scroll bar for Chrome, Safari, Opera
+    &::-webkit-scrollbar{
+      display: none;
+    }
+
+  }
+  .weather{
+    flex:75%
+  }
+}
+
+
