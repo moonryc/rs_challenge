@@ -1,6 +1,6 @@
 @use "../../styles/_variables" as *;
 
-.root{
+.root {
   color: $hyperlink-color;
   text-overflow: ellipsis;
   font-size: 1rem;
@@ -11,13 +11,52 @@
   transition: all 300ms ease-in 0s;
   cursor: pointer;
   line-height: 1.7;
+  position: relative;
 
-  &:hover{
+  &:hover {
     padding: 0 0 0 2rem;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 2rem);
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 2rem;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 300ms ease-out 200ms;
+  }
+
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 
 }
 
-.selected{
-  color:$selected-color;
+.selected {
+  color: $selected-color;
+}
+
+.shake {
+  animation: shake 0.5s;
+  animation-iteration-count: 2;
+  color: $error-color;
+}
+
+@keyframes shake {
+  0% {transform: translate(1px, 1px);}
+  10% {transform: translate(-1px, -2px);}
+  20% {transform: translate(-3px, 0px);}
+  30% {transform: translate(3px, 2px);}
+  40% {transform: translate(1px, -1px);}
+  50% {transform: translate(-1px, 2px);}
+  60% {transform: translate(-3px, 1px);}
+  70% {transform: translate(3px, 1px);}
+  80% {transform: translate(-1px, -1px);}
+  90% {transform: translate(1px, 2px);}
+  100% {transform: translate(1px, -2px);}
 }

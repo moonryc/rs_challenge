@@ -1,10 +1,25 @@
 @use "../../styles/_variables" as *;
 
-.root{
+.root {
+  height: 100%;
+  position: relative;
+}
+
+.picture {
+  height: 200px;
+  width: auto;
+  transform: translate(0, 8%);
+}
+
+.info {
+  color: $text-color;
+  min-height: 100%;
+}
 
 
-  .condition{
-    color: $text-color
-  }
-
+.toggleRoot {
+  color: $text-color;
+  position: absolute;
+  top: 0%;
+  left: 0%;
 }
