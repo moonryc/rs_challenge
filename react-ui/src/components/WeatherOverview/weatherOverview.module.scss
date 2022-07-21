@@ -1,25 +1,33 @@
 @use "../../styles/_variables" as *;
+@use "../../styles/mixins" as *;
 
 .root {
+  @extend .module;
   height: 100%;
   position: relative;
+  .toggleRoot {
+    color: $text-color;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
 }
 
 .picture {
-  height: 200px;
+  height: 125px;
   width: auto;
-  transform: translate(0, 8%);
+  transform: translate(-8%, 8%);
 }
 
 .info {
   color: $text-color;
   min-height: 100%;
+
+  @media screen and (max-width: $md){
+    min-height: fit-content;
+  }
+
 }
 
 
-.toggleRoot {
-  color: $text-color;
-  position: absolute;
-  top: 0%;
-  left: 0%;
-}

@@ -1,13 +1,13 @@
 @use '../../styles/_variables' as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/_typograpghy" as *;
 
 .root{
 
+  @extend .module;
+
   .headerCell{
-    border-bottom: $border-color solid 1px;
-    font-size:2.5rem;
-    letter-spacing: 2px;
-    line-height: 1.2;
-    font-weight: bold;
+    @extend .title
   }
 
   tr > th{
