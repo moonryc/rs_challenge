@@ -1,13 +1,19 @@
-@use '../../styles/_variables' as *;
+@use '../../styles/variables' as *;
 @use "../../styles/mixins" as *;
-@use "../../styles/_typograpghy" as *;
+@use "../../styles/typograpghy" as *;
 
 .root{
 
   @extend .module;
 
+  .headerRow >th{
+    border-left:transparent;
+  }
   .headerCell{
-    @extend .title
+    @extend .title;
+    padding-left:0;
+    margin-left:0;
+    border-bottom: $border-color solid 1px;
   }
 
   tr > th{

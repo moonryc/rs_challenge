@@ -73,10 +73,9 @@
   }
 
 }
-
+//Toggles drawer off when screen size changes
 .drawer {
   @media screen and (min-width: $md) {
     display: none;
-
   }
 }

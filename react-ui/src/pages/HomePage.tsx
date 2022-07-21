@@ -5,17 +5,14 @@ import { Grid } from '@mui/material'
 
 const HomePage = () => {
   return (
-    <div className={styles.root}>
-      <Grid container className={styles.gridContainer}>
-        <Grid item xs={12} md={3} className={styles.teams}>
-          <NavBar />
-        </Grid>
-        <Grid container  item xs={12} md={9} className={styles.weather} justifyContent={"center"} alignItems={'center'}>
-          <DisplayWeather />
-        </Grid>
+    <Grid container className={styles.root}>
+      <Grid item xs={12} md={4} lg={3} className={styles.navbar}>
+        <NavBar />
       </Grid>
-    </div>
-
+      <Grid container item xs={12} md={8} lg={9} justifyContent={'center'} alignItems={'center'}>
+        <DisplayWeather />
+      </Grid>
+    </Grid>
   )
 }
 

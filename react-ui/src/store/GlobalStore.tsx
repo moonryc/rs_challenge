@@ -2,8 +2,6 @@ import { createContext, useContext } from "react";
 import { GlobalState, GlobalStoreContextType } from "../types";
 import { useGlobalStoreReducer } from "./reducers";
 
-
-
 const initialState:GlobalState = {
   teams: [],
   weather:null,

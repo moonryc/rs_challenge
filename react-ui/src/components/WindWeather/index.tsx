@@ -1,17 +1,7 @@
-import {
-  FormControlLabel,
-  Switch,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-} from '@mui/material'
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 import React from 'react'
 import styles from './windWeather.module.scss'
-import { GlobalActions, WeatherCurrent } from '../../types'
-import { useGlobalStoreContext } from '../../store/GlobalStore'
+import { WeatherCurrent } from '../../types'
 import DegreeSymbol from '../DegreeSymbol'
 
 interface WindWeatherProps {
@@ -25,35 +15,37 @@ const WindWeather = ({ currentWeather,isMetric }: WindWeatherProps) => {
 
   const gust = isMetric ? `${gust_kph} kph` : `${gust_mph} mph`;
   const wind = isMetric ? `${wind_kph} kph` : `${wind_mph} mph`;
-
-  const data = [
-    { name: "Gust", value: gust },
-    { name: "Wind", value: wind },
-    { name: "Wind Degree", value: wind_degree },
-    { name: "Wind Direction", value: wind_dir }];
-
-
+  
   return (
     <div>
       <TableContainer className={styles.root}>
         <Table aria-label="simple table">
           <TableHead>
-          <TableRow component={"th"}>
+          <TableRow className={styles.headerRow}>
             <TableCell className={styles.headerCell}>Wind</TableCell>
             <TableCell/>
           </TableRow>
             </TableHead>
           <TableBody>
-            {data.map(row => (
-              <TableRow key={row.name}>
-                <TableCell component="th" scope="row">{row.name}</TableCell>
-                <TableCell align="right">{row.value} {row.name==="Wind Degree" && <DegreeSymbol isTemperature={false}/>}</TableCell>
-              </TableRow>
-            ))}
+            <TableRow>
+              <TableCell component="th" scope="row">Gust</TableCell>
+              <TableCell align="right">{gust}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell component="th" scope="row">Wind</TableCell>
+              <TableCell align="right">{wind}</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell component="th" scope="row">Wind Degree</TableCell>
+              <TableCell align="right">{wind_degree} <DegreeSymbol isTemperature={false}/> </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell component="th" scope="row">Wind Direction</TableCell>
+              <TableCell align="right">{wind_dir}</TableCell>
+            </TableRow>
           </TableBody>
         </Table>
       </TableContainer>
-
     </div>
   );
 };

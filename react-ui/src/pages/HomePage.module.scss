@@ -1,4 +1,4 @@
-@use "../styles/_variables" as *;
+@use "../styles/variables" as *;
 @use "../styles/mixins" as *;
 
 .root{
@@ -8,14 +8,10 @@
   overflow-y: auto;
   @include noScrollBar;
 
-  .teams{
+  .navbar{
     border-right: 1px dashed $border-color;
     @media screen and (max-width:$md){
       border-right: 0;
     }
   }
-}
-
-.weather{
-  //min-height:100vh;
 }

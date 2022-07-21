@@ -1,4 +1,4 @@
-@use "../../styles/_variables" as *;
+@use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
 .root {
@@ -8,7 +8,6 @@
   font-weight: 800;
   text-decoration: none;
   width: fit-content;
-  //margin:0 0 6.6px;
   transition: all 300ms ease-in 0s;
   cursor: pointer;
   line-height: 1.7;

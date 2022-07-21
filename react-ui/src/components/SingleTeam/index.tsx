@@ -1,8 +1,7 @@
-import styles from './singleTeam.module.scss';
-import { Team } from "../../types";
-import { Paper, Typography } from "@mui/material";
-import * as React from "react";
-import { useState } from 'react'
+import styles from './singleTeam.module.scss'
+import { Team } from '../../types'
+import { Typography } from '@mui/material'
+import React, { useState } from 'react'
 
 interface TeamProps {
   team:Team

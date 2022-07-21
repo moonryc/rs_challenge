@@ -1,10 +1,11 @@
-@use "../../styles/_variables" as *;
+@use "../../styles/variables" as *;
 @use "../../styles/mixins" as *;
 
 .root {
   @extend .module;
   height: 100%;
   position: relative;
+
   .toggleRoot {
     color: $text-color;
     position: absolute;

@@ -1,8 +1,7 @@
-import { FormControlLabel, Grid, Switch, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import styles from './weatherOverview.module.scss'
-import { GlobalActions, Weather, WeatherCurrent, WeatherLocation } from '../../types'
+import { Weather } from '../../types'
 import React from 'react'
-import { useGlobalStoreContext } from '../../store/GlobalStore'
 import MetricSwitch from '../MetricSwitch'
 import { format } from 'date-fns'
 

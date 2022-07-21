@@ -12,9 +12,9 @@ const NavBar = () => {
   const { state, dispatch } = useGlobalStoreContext()
   const { teams } = state
   const [teamIdError, setTeamIdError] = useState<number | null>(null)
+  const [updateTeamsError, setUpdateTeamsError] = useState(false)
   const [selectedTeam, setSelectedTeam] = useState<Team | null>(null)
   const [drawerIsOpen, setDrawerIsOpen] = useState(false)
-  const [updateError, setUpdateError] = useState(false)
 
   const handleUpdateTeams = useCallback(async () => {
     try{
@@ -24,7 +24,7 @@ const NavBar = () => {
       }
       dispatch({ action: GlobalActions.UPDATE_TEAMS, payload: teams })
     }catch (e) {
-      setUpdateError(true)
+      setUpdateTeamsError(true)
     }
   }, [dispatch])
   const handleTeamClick = useCallback(async (team: Team) => {
@@ -74,7 +74,7 @@ const NavBar = () => {
         <h1>NBA Weather</h1>
       </header>
       <div className={styles.teamsDesktop}>
-        <UpdateTeamsButton handleClick={handleUpdateTeams} isError={updateError} />
+        <UpdateTeamsButton handleClick={handleUpdateTeams} isError={updateTeamsError} />
         <GenerateList />
       </div>
       <Drawer className={styles.drawer} anchor={'left'} open={drawerIsOpen}

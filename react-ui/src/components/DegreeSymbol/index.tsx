@@ -15,4 +15,4 @@ const DegreeSymbol = ({isMetric=false, isTemperature=false}:DegreeSymbolProps) =
   )
 }
 
-export default DegreeSymbol
+export default React.memo(DegreeSymbol);

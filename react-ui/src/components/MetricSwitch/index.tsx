@@ -9,11 +9,9 @@ const MetricSwitch = () => {
   const { state, dispatch } = useGlobalStoreContext()
   const { isMetric } = state
   const classes = {
-    input: styles['MuiSwitch-input'],
-    edgeStart: styles['MuiSwitch-edgeStart'],
-    edgeEnd: styles['MuiSwitch-edgeEnd'],
     thumb: styles["MuiSwitch-thumb"],
-    track:styles["MuiSwitch-track"],
+    track: isMetric ? styles["MuiSwitch-track"] : null,
+    sizeSmall:styles["MuiSwitch-track"],
   }
 
   return (

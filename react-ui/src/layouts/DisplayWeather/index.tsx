@@ -16,8 +16,6 @@ const DisplayWeather = () => {
     return <div/>
   }
 
-
-
   return (
     <div className={styles.root}>
       <Grid container spacing={2}>
