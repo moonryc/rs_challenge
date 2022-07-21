@@ -1,9 +1,9 @@
 import { useGlobalStoreContext } from '../../store/GlobalStore'
 import { Grid } from '@mui/material'
-import WindWeather from '../../components/WindWeather'
+import WindWeather from '../../components/WeatherWidgets/WindWeather'
 import styles from './displayWeather.module.scss'
-import WeatherOverview from '../../components/WeatherOverview'
-import CurrentWeather from '../../components/CurrentWeather'
+import WeatherOverview from '../../components/WeatherWidgets/WeatherOverview'
+import CurrentWeather from '../../components/WeatherWidgets/CurrentWeather'
 
 const DisplayWeather = () => {
   const { state } = useGlobalStoreContext()

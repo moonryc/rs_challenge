@@ -8,8 +8,8 @@ import {
 } from '@mui/material'
 import React from 'react'
 import styles from './windWeather.module.scss'
-import { WeatherCurrent } from '../../types'
-import DegreeSymbol from '../DegreeSymbol'
+import { WeatherCurrent } from '../../../types'
+import DegreeSymbol from '../../DegreeSymbol'
 
 interface WindWeatherProps {
   currentWeather: WeatherCurrent

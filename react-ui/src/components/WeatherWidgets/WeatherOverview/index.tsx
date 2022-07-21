@@ -1,8 +1,8 @@
 import { Grid, Typography } from '@mui/material'
 import styles from './weatherOverview.module.scss'
-import { Weather } from '../../types'
+import { Weather } from '../../../types'
 import React from 'react'
-import MetricSwitch from '../MetricSwitch'
+import MetricSwitch from '../../MetricSwitch'
 import { format } from 'date-fns'
 
 interface WeatherOverviewProps {

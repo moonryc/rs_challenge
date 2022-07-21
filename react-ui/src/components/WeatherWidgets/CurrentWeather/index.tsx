@@ -1,6 +1,6 @@
 import React from 'react'
-import { WeatherCurrent } from '../../types'
-import DegreeSymbol from '../DegreeSymbol'
+import { WeatherCurrent } from '../../../types'
+import DegreeSymbol from '../../DegreeSymbol'
 import { Grid, Typography } from '@mui/material'
 import styles from './currentWeather.module.scss'
 
