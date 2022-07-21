@@ -23,6 +23,7 @@
     font-size: 1rem;
     background-color: $background-color;
     z-index: 1;
+    position: sticky; top: 0;
 
     @media screen and (max-width: $md) {
       justify-content: space-between;
