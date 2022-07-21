@@ -1,41 +1,41 @@
-require("dotenv").config();
-const express = require("express");
-const path = require("path");
-const cluster = require("cluster");
-const numCPUs = require("os").cpus().length;
-const routes = require("./routes");
+require('dotenv').config()
+const express = require('express')
+const path = require('path')
+const cluster = require('cluster')
+const numCPUs = require('os').cpus().length
+const routes = require('./routes')
 
-const isDev = process.env.NODE_ENV !== "production";
-const PORT = process.env.PORT || 5000;
+const isDev = process.env.NODE_ENV !== 'production'
+const PORT = process.env.PORT || 5000
 
 // Multi-process to utilize all CPU cores.
 if (!isDev && cluster.isMaster) {
-  console.error(`Node cluster master ${process.pid} is running`);
+  console.error(`Node cluster master ${process.pid} is running`)
 
   // Fork workers.
   for (let i = 0; i < numCPUs; i++) {
-    cluster.fork();
+    cluster.fork()
   }
 
-  cluster.on("exit", (worker, code, signal) => {
+  cluster.on('exit', (worker, code, signal) => {
     console.error(
       `Node cluster worker ${worker.process.pid} exited: code ${code}, signal ${signal}`
-    );
-  });
+    )
+  })
 } else {
-  const app = express();
+  const app = express()
 
   // Priority serve any static files.
-  app.use(express.static(path.resolve(__dirname, "../react-ui/build")));
+  app.use(express.static(path.resolve(__dirname, '../react-ui/build')))
 
   // Answer API requests.
-  app.use(routes);
+  app.use(routes)
 
   app.listen(PORT, () => {
     console.error(
       `Node ${
-        isDev ? "dev server" : `cluster worker ${process.pid}`
+        isDev ? 'dev server' : `cluster worker ${process.pid}`
       }: listening on port ${PORT}`
-    );
-  });
+    )
+  })
 }
