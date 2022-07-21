@@ -27,7 +27,11 @@
     "no-console": "off",
     "func-names": "off",
     "no-process-exit": "off",
+    "no-plusplus": "off",
     "object-shorthand": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "jsx-quotes": [2, "prefer-single"],
+    "semi": ["error", "never"],
+    "quotes": [2, "single"]
   }
 }

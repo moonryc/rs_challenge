@@ -4,5 +4,5 @@
   "semi": false,
   "singleQuote": true,
   "useTabs": false,
-  "jsxSingleQuote": false
+  "jsxSingleQuote": true
 }
