@@ -1,6 +1,6 @@
 import {Team} from "../../types";
 
-export const getAllNbaTeams = async ():Promise<Team[]> => {
+export const getAllNbaTeams = async ():Promise<Team[]|null> => {
 
     try{
         const response = await fetch('/api/nba/teams')
@@ -15,9 +15,7 @@ export const getAllNbaTeams = async ():Promise<Team[]> => {
         return data
 
     }catch (e) {
-        //TODO REMOVE
-        alert('ERROR FETCHING NBA TEAMS')
         console.log(e)
-        return []
+        return null
     }
 }
