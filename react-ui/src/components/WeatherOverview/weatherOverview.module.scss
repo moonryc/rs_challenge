@@ -1,5 +1,5 @@
-@use "../../styles/variables" as *;
-@use "../../styles/mixins" as *;
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 .root {
   @extend .module;
@@ -12,7 +12,6 @@
     top: 1rem;
     right: 1rem;
   }
-
 }
 
 .picture {
@@ -25,10 +24,7 @@
   color: $text-color;
   min-height: 100%;
 
-  @media screen and (max-width: $md){
+  @media screen and (max-width: $md) {
     min-height: fit-content;
   }
-
 }
-
-

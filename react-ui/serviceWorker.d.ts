@@ -1,1 +1,1 @@
-declare module 'serviceWorker';
+declare module 'serviceWorker'

@@ -1,11 +1,10 @@
-@use "../../styles/variables" as *;
+@use '../../styles/variables' as *;
 
 .MuiSwitch-edgeStart,
 .MuiSwitch-edgeEnd,
 .MuiSwitch-input,
 .MuiSwitch-thumb,
-.MuiSwitch-track,
-{
+.MuiSwitch-track {
   color: $text-color;
   background-color: $text-color !important;
 }

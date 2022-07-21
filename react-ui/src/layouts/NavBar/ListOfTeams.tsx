@@ -10,8 +10,12 @@ interface ListOfTeamsProps {
   teamIdError: number | null
 }
 
-const ListOfTeams = ({ teams, selectedTeam, handleTeamClick, teamIdError }: ListOfTeamsProps) => {
-
+const ListOfTeams = ({
+  teams,
+  selectedTeam,
+  handleTeamClick,
+  teamIdError,
+}: ListOfTeamsProps) => {
   if (!teams.length) {
     return <div />
   }
@@ -19,13 +23,16 @@ const ListOfTeams = ({ teams, selectedTeam, handleTeamClick, teamIdError }: List
   return (
     <nav className={styles.nav}>
       <ul>
-        {teams.map(team => <li key={team.id}>
-          <SingleTeam team={team}
-                      isSelected={selectedTeam?.id === team.id}
-                      handleClick={handleTeamClick}
-                      isError={team.id === teamIdError} />
-        </li>,
-        )}
+        {teams.map((team) => (
+          <li key={team.id}>
+            <SingleTeam
+              team={team}
+              isSelected={selectedTeam?.id === team.id}
+              handleClick={handleTeamClick}
+              isError={team.id === teamIdError}
+            />
+          </li>
+        ))}
       </ul>
     </nav>
   )

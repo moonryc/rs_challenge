@@ -1,9 +1,9 @@
-@use "../../styles/variables" as *;
-@use "../../styles/mixins" as *;
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
-.root{
+.root {
   padding: 0 16px;
-  @media screen and (max-width:$md) {
+  @media screen and (max-width: $md) {
     padding-top: 100px;
   }
 }

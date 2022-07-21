@@ -1,6 +1,6 @@
-@use "../../styles/variables" as *;
-@use "../../styles/typograpghy" as *;
-@use "../../styles/mixins" as *;
+@use '../../styles/variables' as *;
+@use '../../styles/typograpghy' as *;
+@use '../../styles/mixins' as *;
 
 .root {
   height: 100vh;
@@ -9,7 +9,6 @@
   flex-direction: column;
 
   @include noScrollBar;
-
 
   @media screen and (max-width: $md) {
     height: fit-content;
@@ -23,7 +22,8 @@
     font-size: 1rem;
     background-color: $background-color;
     z-index: 1;
-    position: sticky; top: 0;
+    position: sticky;
+    top: 0;
 
     @media screen and (max-width: $md) {
       justify-content: space-between;
@@ -41,7 +41,6 @@
     }
   }
 
-
   .teamsDesktop {
     display: flex;
     flex-direction: column;
@@ -49,7 +48,6 @@
       display: none;
     }
   }
-
 }
 
 .nav {
@@ -59,20 +57,19 @@
   padding-left: 1rem;
   @include noScrollBar;
 
-  ul, li {
+  ul,
+  li {
     margin: 5px 0 0 0;
     padding: 0;
     list-style: none;
   }
 
   @media screen and (max-width: $md) {
-      min-width: 50vw;
-
+    min-width: 50vw;
   }
   @media screen and (max-width: $sm) {
     width: 100vw;
   }
-
 }
 //Toggles drawer off when screen size changes
 .drawer {

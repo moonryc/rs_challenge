@@ -1,5 +1,5 @@
-@use "../../styles/variables" as *;
-@use "../../styles/mixins" as *;
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 .root {
   color: $hyperlink-color;
@@ -34,15 +34,12 @@
     transform: scaleX(1);
     transform-origin: bottom left;
   }
-
 }
 
 .selected {
   color: $selected-color;
 }
 
-
-.shake{
+.shake {
   @include shakeItem;
 }
-

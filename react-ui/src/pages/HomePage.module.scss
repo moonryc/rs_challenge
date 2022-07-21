@@ -1,16 +1,16 @@
-@use "../styles/variables" as *;
-@use "../styles/mixins" as *;
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
 
-.root{
+.root {
   background-color: $background-color;
-  margin:0;
-  height:100vh;
+  margin: 0;
+  height: 100vh;
   overflow-y: auto;
   @include noScrollBar;
 
-  .navbar{
+  .navbar {
     border-right: 1px dashed $border-color;
-    @media screen and (max-width:$md){
+    @media screen and (max-width: $md) {
       border-right: 0;
     }
   }

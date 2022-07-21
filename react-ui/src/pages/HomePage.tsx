@@ -9,7 +9,15 @@ const HomePage = () => {
       <Grid item xs={12} md={4} lg={3} className={styles.navbar}>
         <NavBar />
       </Grid>
-      <Grid container item xs={12} md={8} lg={9} justifyContent={'center'} alignItems={'center'}>
+      <Grid
+        container
+        item
+        xs={12}
+        md={8}
+        lg={9}
+        justifyContent={'center'}
+        alignItems={'center'}
+      >
         <DisplayWeather />
       </Grid>
     </Grid>
