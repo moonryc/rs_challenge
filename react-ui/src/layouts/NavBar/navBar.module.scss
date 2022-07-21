@@ -1,0 +1,82 @@
+@use "../../styles/variables" as *;
+@use "../../styles/typograpghy" as *;
+@use "../../styles/mixins" as *;
+
+.root {
+  height: 100vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+
+  @include noScrollBar;
+
+
+  @media screen and (max-width: $md) {
+    height: fit-content;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+    border-bottom: $border-color dashed 1px;
+    @extend .title;
+    font-size: 1rem;
+    background-color: $background-color;
+    z-index: 1;
+
+    @media screen and (max-width: $md) {
+      justify-content: space-between;
+      padding: 0 1rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+    }
+
+    .icon {
+      color: $text-color;
+      @media screen and (min-width: $md) {
+        display: none;
+      }
+    }
+  }
+
+
+  .teamsDesktop {
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: $md) {
+      display: none;
+    }
+  }
+
+}
+
+.nav {
+  overflow-y: scroll;
+  overflow-x: clip;
+  background-color: $background-color;
+  padding-left: 1rem;
+  @include noScrollBar;
+
+  ul, li {
+    margin: 5px 0 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  @media screen and (max-width: $md) {
+      min-width: 50vw;
+
+  }
+  @media screen and (max-width: $sm) {
+    width: 100vw;
+  }
+
+}
+
+.drawer {
+  @media screen and (min-width: $md) {
+    display: none;
+
+  }
+}

@@ -1,0 +1,10 @@
+@use "./_variables" as *;
+
+.title{
+    border-bottom: $border-color solid 1px;
+    font-size:2.5rem;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    font-weight: bold;
+    color: $text-color;
+}
