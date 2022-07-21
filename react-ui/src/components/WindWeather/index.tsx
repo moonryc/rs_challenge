@@ -23,14 +23,12 @@ interface WindWeatherProps {
 const WindWeather = ({ currentWeather,isMetric }: WindWeatherProps) => {
   const {gust_kph, wind_degree, wind_kph, wind_dir, wind_mph, gust_mph} = currentWeather
 
-
-
   const gust = isMetric ? `${gust_kph} kph` : `${gust_mph} mph`;
   const wind = isMetric ? `${wind_kph} kph` : `${wind_mph} mph`;
 
   const data = [
-    { name: "gust", value: gust },
-    { name: "wind", value: wind },
+    { name: "Gust", value: gust },
+    { name: "Wind", value: wind },
     { name: "Wind Degree", value: wind_degree },
     { name: "Wind Direction", value: wind_dir }];
 

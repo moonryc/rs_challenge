@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { WeatherCurrent } from '../../types'
 import DegreeSymbol from '../DegreeSymbol'
 import { Grid } from '@mui/material'
+import styles from './currentWeather.module.scss'
 
 
 interface CurrentWeatherProps {
@@ -31,7 +32,7 @@ const CurrentWeather = ({ currentWeather,isMetric }: CurrentWeatherProps) => {
   const pressure = isMetric ? `${pressure_mb} mb` : `${pressure_in} in`
 
   return (
-    <Grid container>
+    <Grid container className={styles.root}>
       <Grid item xs={12} md={4}>Temperature: {temperature} <DegreeSymbol isMetric={isMetric} isTemperature/></Grid>
       <Grid item xs={12} md={4}>Feels like: {feelsLike} <DegreeSymbol isMetric={isMetric} isTemperature/></Grid>
       <Grid item xs={12} md={4}>Visibility: {visibility}</Grid>

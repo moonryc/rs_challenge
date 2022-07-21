@@ -1,11 +1,8 @@
-import { useEffect, useState } from "react";
-import { useGlobalStoreContext } from "../../store/GlobalStore";
-import { getCurrentCityWeather } from "../../utils";
-import { Weather } from "../../types";
-import { FormControlLabel, FormGroup, Grid, Switch } from "@mui/material";
-import WindWeather from "../../components/WindWeather";
-import styles from './displayWeather.module.scss'
-import WeatherOverview from "../../components/WeatherOverview";
+import { useGlobalStoreContext } from '../../store/GlobalStore'
+import { Grid } from '@mui/material'
+import WindWeather from '../../components/WindWeather'
+import styles from  './displayWeather.module.scss'
+import WeatherOverview from '../../components/WeatherOverview'
 import CurrentWeather from '../../components/CurrentWeather'
 
 
@@ -22,25 +19,19 @@ const DisplayWeather = () => {
 
 
   return (
-
+    <div className={styles.root}>
       <Grid container spacing={2}>
-        <Grid item container xs={12} md={6} lg={6}>
-          <div className={styles.modules}>
+        <Grid item container xs={12} md={6} lg={7}>
             <WeatherOverview weather={weather}/>
-          </div>
         </Grid>
-        <Grid item xs={12} md={6} lg={6}>
-          <div className={styles.modules}>
+        <Grid item xs={12} md={6} lg={5}>
             <WindWeather currentWeather={currentWeather!} isMetric={isMetric}/>
-          </div>
         </Grid>
         <Grid item xs={12}>
-          <div className={styles.modules}>
               <CurrentWeather currentWeather={currentWeather!} isMetric={isMetric}/>
-          </div>
         </Grid>
       </Grid>
-
+    </div>
   );
 };
 

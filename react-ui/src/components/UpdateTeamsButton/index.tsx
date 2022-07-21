@@ -1,23 +1,26 @@
-import { useGlobalStoreContext } from "../../store/GlobalStore";
-import { Button } from "@mui/material";
-import { getAllNbaTeams } from "../../utils";
-import { GlobalActions, Team } from "../../types";
+import { Button } from '@mui/material'
+import React, { useState } from 'react'
+import styles from './updateTeamsButton.module.scss'
+interface UpdateTeamsButtonProps {
+  handleClick:()=>void
+  isError:boolean
+}
 
 
-const UpdateTeamsButton = () => {
+const UpdateTeamsButton = ({handleClick,isError}:UpdateTeamsButtonProps) => {
 
-  const {dispatch} = useGlobalStoreContext()
+  const [clicked, setClicked]=useState(false)
 
-  const handleClick = async () => {
-    const teams:Team[] = await getAllNbaTeams()
-    dispatch({action: GlobalActions.UPDATE_TEAMS, payload:teams})
+  const onClick = () => {
+    handleClick()
+    setClicked(true)
   }
 
   return (
-    <Button onClick={handleClick}>
+    <button className={`${styles.root} ${isError && clicked && styles.shake}`} onAnimationEnd={()=>setClicked(false)} onClick={onClick}>
       GET ALL NBA TEAMS
-    </Button>
+    </button>
   );
 };
 
-export default UpdateTeamsButton;
+export default React.memo(UpdateTeamsButton);
